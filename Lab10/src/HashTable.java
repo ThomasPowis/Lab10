@@ -15,10 +15,12 @@ public class HashTable {
 		//Then calculate hashcode
 		//Next create a student object of that hashCode
 		//Finally add it to the table
+		
+		return false;
 	}
 
 	public static boolean resize() {
-
+		return false;
 	}
 
   //Jonathan's Changes
@@ -51,6 +53,7 @@ public class HashTable {
 		//Then search the hashTable for that value, if there is a collision probe the second value
 		//After finding the correct ASCII value modulus the ascii to get the remainder
 		//Return the remainder
+		return -1;
 	}
 
 
