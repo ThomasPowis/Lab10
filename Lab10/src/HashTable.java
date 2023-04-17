@@ -3,20 +3,15 @@ import java.util.LinkedList;
 public class HashTable {
 
 	public static Student[] hashTable = new Student[500];
-
+	public static int size = 0;
+	
+	//Programmed by Thomas Powis
 	public static boolean add(String input) {
-		System.out.println(hashTable.length);
-		int ascii = hashCode(input);
-		Student tempStudent = new Student(input,ascii);
-    
-		hashTable[ascii] = tempStudent;
-
-		//First take in input, 
-		//Then calculate hashcode
-		//Next create a student object of that hashCode
-		//Finally add it to the table
-		
-		return false;
+		int newHash = hashCode(input);
+		Student newStudent = new Student(input,newHash);
+		hashTable[newStudent.getHash()] = newStudent;
+		size++;
+		return true;
 	}
 
 	public static boolean resize() {
