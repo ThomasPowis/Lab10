@@ -1,9 +1,10 @@
+package yempproj;
 
-public class student {
+public class Student {
 	String name;
 	int hash;
 	boolean hashash=false;
-	public student(String n, int h)
+	public Student(String n, int h)
 	{
 		name=n;
 		hash=h;
@@ -12,6 +13,7 @@ public class student {
 	private int hashcode(String n)
 	{
 		return n.charAt(0);
+		
 	}
 
 	public int gethash(String n)
@@ -20,7 +22,7 @@ public class student {
 		{
 			return hash;
 		}
-		else return hashcode(n);
+		else return 0;
 			
 	}
 }
