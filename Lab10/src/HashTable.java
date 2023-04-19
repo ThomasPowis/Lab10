@@ -41,14 +41,37 @@ public class HashTable {
 		return null;
 	}
 
-
-	public static int hashCode(String input) {
-		//This is a double hashing function
-		//First calculate hash of first value
-		//Then search the hashTable for that value, if there is a collision probe the second value
-		//After finding the correct ASCII value modulus the ascii to get the remainder
-		//Return the remainder
-		return -1;
+	//Coded by Thomas Powis
+	//Helper method for hashCode
+	public static boolean isEmpty(int value) {
+		if(table[value] == null)
+			return true;
+		return false;
+	}
+	
+	//Coded by Thomas Powis
+	//Double hashing method
+	//ChatGPT was used to help build this method
+	//I coded a single hashing function then use chatGPT to help make it a double hashing function
+	public static int hashCode(String hashInput) {
+	    int hash = hashInput.charAt(0) % hashTable.length;
+	    if (isEmpty(hash) == false) {
+	        int second = hashInput.charAt(1) % hashTable.length;
+	        // Preventing the probing stride from being 0
+	        if (second == 0) {
+	            second = 1;
+	        }
+	        int i = 1;
+	        while (isEmpty(hash) == false) {
+	            hash = (hash + i * second) % hashTable.length;
+	            i++;
+	            if (i >= hashTable.length) {
+	                resize();
+	                i = 1;
+	            }
+	        }
+	    }
+	    return hash;
 	}
 
 
