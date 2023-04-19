@@ -10,12 +10,8 @@ Tasks:
 
 4.) Building the hash table - Thomas
 
-5.) Hashcode Method - Nikki 
+5.) Hashcode Method - Thomas Powis
 
 6.) Student class - Nikki 
 
-7.) Testing code
-
-
-Initialized the hash table - Tom Powis
-Created the student class - Nikki Gorski
+7.) Testing code - Nikki
